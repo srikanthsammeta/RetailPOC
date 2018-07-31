@@ -1,0 +1,130 @@
+Test Cases:
+------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Empolyee :
+----------------------------------------------------------------------- 
+
+Test case 1: employee get 30% discount it applyies for only nongroceries. 
+
+- Select product type as nonGroceries.
+- Select userType Employee.
+- Select discount type percentage.
+- No need of customer Period.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is 100 have to disply final price is after 30% discount expected results 70.
+
+
+Test case 2: employee get $5 for every $100 if user selects Product type is Groceries. 
+
+- Select product type as Groceries.
+- Select userType Employee.
+- Select discount type percentage.
+- No need of customer Period.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is $100 have to disply final price is after $5 discount expected results $95.
+
+
+Test case 3: employee get $5 for every $100 if user selects Discount type is nonpercentage. 
+
+- Select product type as nonGroceries.
+- Select userType Employee.
+- Select discount type nonpercentage. 
+- No need of customer Period.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is $100 have to disply final price is after $5 discount expected results $95.
+
+
+---------------------------------------------------------------------
+affiliate:
+----------------------------------------------------------------------- 
+
+Test case 1: affiliate get 10% discount it applyies for only nongroceries. 
+
+- Select product type as nonGroceries.
+- Select userType affiliate.
+- Select discount type percentage.
+- No need of customer Period.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is 100 have to disply final price is after 10% discount expected results 90.
+
+
+Test case 2: affiliate get $5 for every $100 if user selects Product type is Groceries. 
+
+- Select product type as Groceries.
+- Select userType affiliate.
+- Select discount type percentage.
+- No need of customer Period.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is $100 have to disply final price is after $5 discount expected results $95.
+
+
+Test case 3: affiliate get $5 for every $100 if user selects Discount type is nonpercentage. 
+
+- Select product type as nonGroceries.
+- Select userType affiliate.
+- Select discount type nonpercentage. 
+- No need of customer Period.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is $100 have to disply final price is after $5 discount expected results $95.
+
+-----------------------------------------------------------------------
+Customer : 
+----------------------------------------------------------------------- 
+
+Test case 1: 2 years Customer get 5% discount it applyies for only nongroceries. 
+
+- Select product type as nonGroceries.
+- Select userType Customer.
+- Select discount type percentage.
+- give customer Period in days more that 2 years ex:750.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is 100 have to disply final price is after 5% discount expected results 95.
+
+
+Test case 2: 2 years Customer $5 for every $100 if user selects Product type is Groceries. 
+
+- Select product type as Groceries.
+- Select userType Customer.
+- Select discount type percentage.
+- give customer Period in days more that 2 years ex:750.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is $100 have to disply final price is after $5 discount expected results $95.
+
+
+Test case 3: 2 years Customer get $5 for every $100 if user selects Discount type is nonpercentage. 
+
+- Select product type as nonGroceries.
+- Select userType Customer.
+- Select discount type nonpercentage. 
+- give customer Period in days more than 2 years ex:750 days.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is $100 have to disply final price is after $5 discount expected results $95.
+
+Test case 4: below 2 years Customer don't get any dicount. 
+
+- Select product type as nonGroceries.
+- Select userType Customer.
+- Select discount type percentage. 
+- give customer Period in days less than 2 years ex:200 days.
+- Give any price you want.
+- Click on submit
+
+ex: consider input is price is 100 have to disply final price is after no discount expected results 100.

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+
+<body>
+
+<br><br><br>	
+ProductType : <select id="productType">
+  <option value="nongroceries " >nongroceries </option>
+  <option value="groceries">groceries</option>
+</select>
+	<br><br><br>
+
+UserType : <select id="userType">
+  <option value="employee" >employee</option>
+  <option value="affiliate">affiliate</option>
+  <option value="customer">customer</option>
+</select>
+<br><br><br>
+DiscountType : <select id="discounType">
+  <option value="percentage" >percentage</option>
+  <option value="nonPercentage">nonPercentage</option>
+</select>
+<br><br><br>
+
+Customer Period: <input type="text"  id="CusPeriod">
+note : if customer selected in userType then give customer period in days.
+<br>	<br><br>
+
+ProductPrice : <input type="text" id="ProdPrice">
+
+<br><br><br>
+
+<button onclick="submit()">Submit </button>
+
+
+
+
+
+</body>
+
+<script>
+
+// Global variables 
+var productName;
+var productType;
+var productDiscount;
+var productPrice;
+var userType;
+var productFinalPrice;
+var discounType;
+var customerPeriod;
+var discountsObj;
+
+
+
+//switch case for selected userType
+function submit(){
+
+//Input parameters 
+productType = document.getElementById("productType").value;
+userType = document.getElementById("userType").value;
+discounType = document.getElementById("discounType").value;
+discountsObj = { "employee":30, "affiliate":10, "customer":5 };
+customerPeriod = document.getElementById("CusPeriod").value;
+productPrice =  document.getElementById("ProdPrice").value;
+
+switch(userType) {
+    case "employee":
+        employee();
+        break;
+    case "affiliate":
+        affiliate();
+        break;
+   case "customer":
+        customer();
+        break;
+} 
+}
+// Funcion to calucalte employee user type discounts
+	function employee(){
+
+if(discounType == "percentage" && productType != "groceries"){
+
+  productDiscount = discountsObj.employee;
+  productFinalPrice = productPrice - productPrice/100*productDiscount;
+   
+alert("Product price is "+ productPrice +". Employees will get 30% discount. The Product final Price "+productFinalPrice);
+}else{
+nonPercentage();
+}
+
+}
+// Funcion to calucalte affiliate user type discounts
+function affiliate(){
+
+
+if(discounType == "percentage" && productType != "groceries"){
+  
+  productDiscount = discountsObj.affiliate;
+  productFinalPrice = productPrice - productPrice/100*productDiscount;
+   
+alert("Product price is "+ productPrice +". affiliate will get 10% discount. The Product final Price "+productFinalPrice);
+}else{
+nonPercentage();
+}
+
+
+}
+// Funcion to calucalte customer user type discounts
+function customer(){
+
+// calculating years in days
+if(customerPeriod > 720){
+if(discounType == "percentage" && productType != "groceries"){
+  productDiscount = discountsObj.customer;
+  productFinalPrice = productPrice - productPrice/100*productDiscount;
+   
+alert("Product price is "+ productPrice +". affiliate will get 5% discount. The Product final Price "+productFinalPrice);
+}else{
+nonPercentage();
+}
+
+}else{
+productFinalPrice = productPrice;
+alert("Product price is "+ productPrice +". Customer Not eligible for any discount. The Product final Price "+ productFinalPrice);
+}
+}
+//Function to calucalte nonPercentage discounts
+function nonPercentage(){
+
+
+  var productPriceNew = productPrice/100;
+  productPriceNew = productPriceNew.toString().split(".")[0];
+  productPriceNew = productPriceNew * 5;
+  productFinalPrice = productPrice - productPriceNew;
+   
+alert("Product price is "+ productPrice +". after discount ex $100 he will get $5. The Product final price "+productFinalPrice);
+
+} 
+</script>
+
+
+
+
+
+</html>
